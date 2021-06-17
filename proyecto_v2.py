@@ -1,6 +1,28 @@
 from gpiozero import LED, Button
+from typing import Tuple
 from time import sleep
+import hashlib
 import random
+
+class Rounder:
+    def __init__(self, random_number_range:Tuple)
+        self.number_range = random_number_range
+        self.used_numbers = set()
+    
+    def resetRounder(self, new_range:Tuple)-> None:
+        self.number_range = new_range
+        self.used_numbers = set()
+    
+    def IterRound(self)-> int:
+        if (self.number_range[1] - self.number_range[0]) > len(used_numbers):
+            while True:
+                used_number = random.randint(self.number_range[0], self.number_range[1])
+                if used_number in self.used_numbers:
+                    break
+            self.used_numbers.add(used_number)
+            return used_number
+    
+
 
 def menu():
     print("Hola, bienvenido!\n")
@@ -278,4 +300,4 @@ c = 0
 nb = 0
 
 while True:
-    menu()  
+    menu()
